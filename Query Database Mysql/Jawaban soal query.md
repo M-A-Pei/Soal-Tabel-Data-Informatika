@@ -8,20 +8,21 @@ Column output:
 - total_price (total harga semua produk dalam pesanan)
 
 **Jawaban**
->SELECT 
->    orders.id AS order_id, 
->    orders.customer_name, 
->    orders.order_date, 
->    SUM(order_items.quantity) AS total_items,
->    SUM(order_items.price) AS total_price
->FROM 
->    `orders`
->LEFT JOIN 
->    `order_items` 
->ON 
->    orders.id = order_items.order_id
->GROUP BY 
->    orders.id, orders.customer_name, orders.order_date;
+```sql
+    SELECT 
+        orders.id AS order_id, 
+        orders.customer_name, 
+        orders.order_date, 
+        SUM(order_items.quantity) AS total_items,
+        SUM(order_items.price) AS total_price
+    FROM 
+        `orders`
+    LEFT JOIN 
+        `order_items` 
+    ON 
+        orders.id = order_items.order_id
+    GROUP BY 
+        orders.id, orders.customer_name, orders.order_date;
 
 **Output**
 
