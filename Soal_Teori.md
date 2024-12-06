@@ -1,9 +1,9 @@
 ## Soal Teori
 
 **1. Laravel Lumen:** *(5 point)*
-● Apa perbedaan utama antara Laravel dan Laravel Lumen? Jelaskan dalam konteks
+- ● Apa perbedaan utama antara Laravel dan Laravel Lumen? Jelaskan dalam konteks
 penggunaan aplikasi yang ringan dan performa API. (2 point)
-● Jelaskan konsep middleware di Laravel Lumen dan berikan contoh
+- ● Jelaskan konsep middleware di Laravel Lumen dan berikan contoh
 penggunaannya. *(2 point)*
 ● Apa itu dependency injection, dan bagaimana Laravel Lumen memanfaatkannya?
 (1 point)
