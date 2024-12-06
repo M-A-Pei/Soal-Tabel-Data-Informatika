@@ -3,7 +3,7 @@
 1. **Laravel Lumen:** *(5 point)*
 - Apa perbedaan utama antara Laravel dan Laravel Lumen? Jelaskan dalam konteks
 penggunaan aplikasi yang ringan dan performa API. (2 point)
-<span style="color: yellow;">Laravel Lumen adalah versi lebih ringanya Laravel yang bermaksud untuk hanya fokus kepada pengembangan API</span>
+> Laravel Lumen adalah versi lebih ringanya Laravel yang bermaksud untuk hanya fokus kepada pengembangan API
 - Jelaskan konsep middleware di Laravel Lumen dan berikan contoh
 penggunaannya. *(2 point)*
 - Apa itu dependency injection, dan bagaimana Laravel Lumen memanfaatkannya?
