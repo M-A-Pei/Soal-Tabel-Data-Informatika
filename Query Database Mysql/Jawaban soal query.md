@@ -23,6 +23,7 @@ Column output:
         orders.id = order_items.order_id
     GROUP BY 
         orders.id, orders.customer_name, orders.order_date;
+```
 
 **Output**
 
