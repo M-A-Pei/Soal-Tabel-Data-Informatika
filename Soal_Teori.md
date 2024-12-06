@@ -7,13 +7,13 @@ penggunaan aplikasi yang ringan dan performa API. (2 point)
 penggunaannya. *(2 point)*
 - Apa itu dependency injection, dan bagaimana Laravel Lumen memanfaatkannya?
 (1 point)
-**2. Vue.js:** *(5 point)*
+2. **Vue.js:** *(5 point)*
 - Jelaskan apa itu reactive data binding di Vue.js dan bagaimana ini membantu
 dalam pengembangan front-end? *(2 point)*
 - Sebutkan dan jelaskan perbedaan utama antara computed properties dan
 methods di Vue.js. *(2 point)*
 - Apa keuntungan menggunakan Vuex dalam aplikasi Vue.js? (1 point)
-**3. MySQL:** *(5 point)*
+3. **MySQL:** *(5 point)*
 - Jelaskan apa itu indexing di MySQL, dan bagaimana ini mempengaruhi performa
 query? *(2 point)*
 - Apa perbedaan antara INNER JOIN dan LEFT JOIN? Berikan contoh kasus
