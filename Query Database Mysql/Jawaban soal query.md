@@ -24,4 +24,5 @@ Column output:
 >    orders.id, orders.customer_name, orders.order_date;
 
 **Output**
+
 ![image](https://github.com/user-attachments/assets/c730ba8f-45cb-46be-89d4-2d2749de1c9c)
