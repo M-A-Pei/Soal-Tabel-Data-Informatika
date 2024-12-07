@@ -104,7 +104,8 @@ FROM `products`
 ```
 
 **Output**
-![image](https://github.com/user-attachments/assets/4fe853de-7b74-488f-813e-f3016a5c153e)
+![image](https://github.com/user-attachments/assets/4ad6432e-57c7-4c1f-b6f2-3772a081a4be)
+
 
 Query 5: Pesanan pada Bulan Tertentu *(3 point)*
 Cari semua pesanan yang dibuat pada bulan tertentu (misalnya, November 2024).
