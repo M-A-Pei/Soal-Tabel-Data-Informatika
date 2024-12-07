@@ -1,21 +1,33 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <BNavbar>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+
+    <!-- Navbar items (links) -->
+    <template #default>
+      <BNavItem href="#">Home</BNavItem>
+      <BNavItem href="#">About</BNavItem>
+      <BNavItem href="#">Services</BNavItem>
+      <BNavItem href="#">Contact</BNavItem>
+    </template>
+  </BNavbar>
 
   <main>
-    <TheWelcome />
+    <!-- Your main content here -->
   </main>
 </template>
+
+<script setup lang="ts">
+  // No need to import components if they are globally registered
+</script>
+
+<style scoped>
+/* Optional: Add custom styling for your navbar */
+</style>
+
 
 <style scoped>
 header {
