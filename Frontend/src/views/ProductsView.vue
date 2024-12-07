@@ -7,8 +7,12 @@
 
 <script setup>
     import { onMounted, ref } from 'vue';
+    import axios from 'axios';
 
-    onMounted(() => {
-        
+    const data = ref([])
+
+    onMounted(async () => {
+        data = await axios.get('http://localhost:8000/api/products')
+        console.log(data)
     })
 </script>
