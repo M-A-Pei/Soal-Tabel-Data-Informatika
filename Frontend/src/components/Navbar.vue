@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar">
-      <div class="navbar-brand">Frontend</div>
+      <div class="navbar-brand"><router-link to="/" style="color: white; text-decoration: none">Frontend</router-link></div>
       <ul class="navbar-links">
         <li><router-link to="/">Products</router-link></li>
         <li><router-link to="/orders">Orders</router-link></li>
