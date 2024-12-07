@@ -1,13 +1,13 @@
-1. Query 1: Total Item dan Harga Pesanan (5 point)
+1. Query 1: Total Item dan Harga Pesanan *(5 point)*
 Buat query untuk menghitung total jumlah item dan total harga per pesanan.
 Column output:
-● order_id
-● customer_name
-● order_date
-● total_items (total jumlah produk dalam pesanan)
-● total_price (total harga semua produk dalam pesanan)
+- order_id
+- customer_name
+- order_date
+- total_items (total jumlah produk dalam pesanan)
+- total_price (total harga semua produk dalam pesanan)
 
-> Jawaban
+**Jawaban**
 >SELECT 
 >    orders.id AS order_id, 
 >    orders.customer_name, 
