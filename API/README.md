@@ -32,4 +32,4 @@ The Lumen framework is open-sourced software licensed under the [MIT license](ht
 2. run `composer install`
 3. copy .env.example and rename to .env
 4. run `php artisan migrate`
-5. run `php -S localhost:8000 -t public`
+5. run `composer run dev`
