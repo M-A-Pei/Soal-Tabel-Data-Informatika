@@ -1,6 +1,7 @@
 # Jawaban Query
 
 1. Query 1: Total Item dan Harga Pesanan *(5 point)*
+
 Buat query untuk menghitung total jumlah item dan total harga per pesanan.
 Column output:
 - order_id
@@ -28,6 +29,7 @@ GROUP BY
 ![image](https://github.com/user-attachments/assets/c730ba8f-45cb-46be-89d4-2d2749de1c9c)
 
 2. Query 2: Pesanan dengan Harga Total Tertinggi *(4 point)*
+   
 Cari pesanan dengan total harga tertinggi, dan tampilkan informasinya.
 Column output:
 - order_id
@@ -55,6 +57,7 @@ ORDER BY
 ![image](https://github.com/user-attachments/assets/288924b4-bbd1-452e-88ea-5da90a2130b3)
 
 3. Query 3: Produk Terpopuler *(4 point)*
+   
 Cari produk yang paling banyak dipesan berdasarkan jumlah total quantity di semua
 pesanan.
 Column output:
