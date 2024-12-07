@@ -104,6 +104,7 @@ FROM `products`
 ```
 
 **Output**
+
 ![image](https://github.com/user-attachments/assets/4ad6432e-57c7-4c1f-b6f2-3772a081a4be)
 
 
