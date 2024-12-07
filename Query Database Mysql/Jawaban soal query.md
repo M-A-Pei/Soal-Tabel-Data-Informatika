@@ -83,3 +83,54 @@ ORDER BY
 
 ![image](https://github.com/user-attachments/assets/9aec78ed-6084-475b-b486-aec005db36f1)
 
+Query 4: Stok Produk Setelah Pemesanan *(4 point)*
+
+Buat query untuk menampilkan semua produk beserta stoknya saat ini setelah
+pemesanan dilakukan.
+Column output:
+- product_id
+- product_name
+- initial_stock (stok awal sebelum ada pesanan)
+- remaining_stock (stok setelah semua pesanan)
+
+**Jawaban**
+```sql
+SELECT 
+	id AS product_id, 
+    name AS product_name,
+    stock AS initial_stock,
+    current_stock AS remaining_stock
+FROM `products`
+```
+
+**Output**
+![image](https://github.com/user-attachments/assets/4fe853de-7b74-488f-813e-f3016a5c153e)
+
+Query 5: Pesanan pada Bulan Tertentu *(3 point)*
+Cari semua pesanan yang dibuat pada bulan tertentu (misalnya, November 2024).
+Column output:
+- order_id
+- customer_name
+- order_date
+- total_price
+
+**Jawaban**
+```sql
+SELECT 
+	orders.id AS order_id,
+    orders.customer_name,
+    orders.order_date,
+    SUM(order_items.price) AS total_price
+FROM 
+	`orders` LEFT JOIN `order_items` ON orders.id = order_items.order_id
+WHERE 
+	MONTH(`order_date`) = 11
+GROUP BY
+	orders.id;
+```
+
+**Output**
+
+![image](https://github.com/user-attachments/assets/5eea2316-e980-40ee-85c1-9d71bb0d8758)
+
+
