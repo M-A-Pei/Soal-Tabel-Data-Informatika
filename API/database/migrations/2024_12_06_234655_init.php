@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('stock');
+            $table->integer('current_stock')->nullable();
             $table->decimal('price', 12, 2);
         });
 

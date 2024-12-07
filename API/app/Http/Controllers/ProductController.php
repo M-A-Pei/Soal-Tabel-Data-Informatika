@@ -28,7 +28,7 @@ class ProductController extends BaseController
         $stock = $request->input("stock");
         $price = $request->input("price");
 
-        return DB::insert('insert into products (name, stock, price) values (?, ?, ?)', [$name, $stock, $price]);
+        return DB::insert('insert into products (name, stock, current_stock ,price) values (?, ?, ?, ?)', [$name, $stock, $stock, $price]);
     }
 
     public function getAll(){

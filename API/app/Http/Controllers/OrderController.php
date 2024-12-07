@@ -45,8 +45,8 @@ class OrderController extends BaseController
     
             DB::insert('insert into order_items (order_id, product_id, quantity, price) values (?, ?, ?, ?)', [$orderId, $productId, $quantity, $price * $quantity]);
 
-            $product->stock = $product->stock - $quantity;
-            DB::update('update products set stock = ? where id = ?', [$product->stock, $productId]);
+            $product->current_stock = $product->current_stock - $quantity;
+            DB::update('update products set current_stock = ? where id = ?', [$product->current_stock, $productId]);
         }
 
         return "Order created successfully";
