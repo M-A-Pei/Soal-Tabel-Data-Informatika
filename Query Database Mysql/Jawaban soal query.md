@@ -47,7 +47,7 @@ FROM
 GROUP BY 
     orders.id, orders.customer_name, orders.order_date
 ORDER BY
-	total_price DESC LIMIT 1;
+    total_price DESC LIMIT 1;
 ```
 
 **Output**
@@ -66,14 +66,14 @@ Column output:
 ```sql
 SELECT 
     products.id AS product_id, 
-	products.name AS product_name,
+    products.name AS product_name,
     SUM(order_items.quantity) AS total_quantity
 FROM 
     `products` LEFT JOIN `order_items` ON products.id = order_items.product_id
 GROUP BY 
     products.id
 ORDER BY
-	total_quantity DESC LIMIT 1;
+    total_quantity DESC LIMIT 1;
 ```
 
 **Output**
