@@ -24,3 +24,30 @@ GROUP BY
 **Output**
 
 ![image](https://github.com/user-attachments/assets/c730ba8f-45cb-46be-89d4-2d2749de1c9c)
+
+2. Query 2: Pesanan dengan Harga Total Tertinggi *(4 point)*
+Cari pesanan dengan total harga tertinggi, dan tampilkan informasinya.
+Column output:
+- order_id
+- customer_name
+- order_date
+- total_price
+
+**Jawaban**
+```sql
+SELECT 
+    orders.id AS order_id, 
+    orders.customer_name, 
+    orders.order_date, 
+    SUM(order_items.price) AS total_price
+FROM 
+    `orders` LEFT JOIN `order_items` ON orders.id = order_items.order_id
+GROUP BY 
+    orders.id, orders.customer_name, orders.order_date
+ORDER BY
+	total_price DESC LIMIT 1;
+```
+
+**Output**
+![image](https://github.com/user-attachments/assets/288924b4-bbd1-452e-88ea-5da90a2130b3)
+
