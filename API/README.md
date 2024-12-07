@@ -26,9 +26,9 @@ If you discover a security vulnerability within Lumen, please send an e-mail to 
 The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 
-# cara menjalani project
+# how to run project
 
-1. pastikan mempunyai composer version ^2.2
+1. make sure composer is version ^2.2
 2. run `composer install`
 3. copy .env.example and rename to .env
 4. run `php artisan migrate`
