@@ -7,7 +7,7 @@
       <slot />
     </div>
     <div class="card-footer" v-if="footer">
-      Rp. {{ footer }}
+      {{ footer }}
     </div>
   </div>
 </template>

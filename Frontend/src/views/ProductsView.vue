@@ -15,7 +15,7 @@
 
 <template>
     <div>
-      <div style="display: flex; width: 100%; justify-content: space-between; ">
+      <div style="display: flex; width: 100%; justify-content: space-between; margin-bottom: 20px">
         <div>
             <h1>Products Page!</h1>
             <p>all Products:</p>
@@ -30,7 +30,7 @@
             v-for="x in data" 
             :key="x.id" 
             :title="x.name" 
-            :footer="x.price" >Stock: {{x.current_stock}}</Card>
+            :footer="`Rp. ${x.price}`" >Stock: {{x.current_stock}}</Card>
       </div>
      
     </div>
