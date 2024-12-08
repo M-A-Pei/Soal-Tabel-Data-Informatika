@@ -37,7 +37,7 @@
       </div>
 
       <template v-slot:footer>
-        <b style="font-weight: bold: font-size: 20px">Rp. {{ data[activeOrder].total_price }}</b>
+        <b>Rp. {{ data[activeOrder].total_price }}</b>
       </template>
     </OrderModal>
     <div>
