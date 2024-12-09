@@ -9,11 +9,6 @@
     const activeOrder = ref(0)
     const showModal = ref(false);
 
-    function handleAction() {
-      alert('Confirmed!');
-      showModal.value = false;
-    }
-
     onMounted(async () => {
         const x = await api.get('/orders')
         console.log(x.data)
@@ -47,7 +42,7 @@
             <p>all Orders:</p>
         </div>
         <div>
-            <CustomButton variant="success" link="/addOrder">Make Order</CustomButton>
+            <CustomButton variant="success" link="addOrders">Make Order</CustomButton>
         </div>
       </div>
 

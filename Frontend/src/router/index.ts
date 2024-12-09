@@ -5,6 +5,7 @@ import MainLayout from '@/layouts/MainLayout.vue';
 import ProductsView from '../views/ProductsView.vue';
 import OrdersView from '../views/OrdersView.vue';
 import AddProductView from '../views/AddProductView.vue';
+import AddOrdersView from '@/views/AddOrdersView.vue';
 
 // Define your routes
 const routes = [
@@ -27,6 +28,11 @@ const routes = [
           name: 'addProduct',
           component: AddProductView,
         },
+        {
+          path: '/addOrder',
+          name: 'addOrders',
+          component: AddOrdersView,
+        }
       ],
     },
   ];

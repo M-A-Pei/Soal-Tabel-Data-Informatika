@@ -21,7 +21,7 @@
             <p>all Products:</p>
         </div>
         <div>
-            <CustomButton variant="warning" link="/addProduct">Add Product</CustomButton>
+            <CustomButton variant="warning" link="addProduct">Add Product</CustomButton>
         </div>
       </div>
 
