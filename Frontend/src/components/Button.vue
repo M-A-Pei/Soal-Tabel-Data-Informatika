@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="link">
+    <router-link :to="{name: link}">
         <button 
             :class="['btn', `btn-${variant}`, { 'btn-block': block }]" 
             :disabled="disabled" 

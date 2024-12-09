@@ -6,8 +6,10 @@
     <div class="card-body">
       <slot />
     </div>
-    <div class="card-footer" v-if="footer">
-      {{ footer }}
+    <div class="card-footer">
+      <slot name="footer">
+
+      </slot>
     </div>
   </div>
 </template>
@@ -17,11 +19,7 @@ defineProps({
   title: {
     type: String,
     default: null,
-  },
-  footer: {
-    type: String,
-    default: null,
-  },
+  }
 });
 </script>
 

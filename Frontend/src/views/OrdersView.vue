@@ -9,11 +9,6 @@
     const activeOrder = ref(0)
     const showModal = ref(false);
 
-    function handleAction() {
-      alert('Confirmed!');
-      showModal.value = false;
-    }
-
     onMounted(async () => {
         const x = await api.get('/orders')
         console.log(x.data)
@@ -37,7 +32,7 @@
       </div>
 
       <template v-slot:footer>
-        <b>Rp. {{ data[activeOrder].total_price }}</b>
+        <b style="font-weight: bold; font-size: 20px">Rp. {{ data[activeOrder].total_price }}</b>
       </template>
     </OrderModal>
     <div>
@@ -47,7 +42,7 @@
             <p>all Orders:</p>
         </div>
         <div>
-            <CustomButton variant="success" link="/addOrder">Make Order</CustomButton>
+            <CustomButton variant="success" link="addOrders">Make Order</CustomButton>
         </div>
       </div>
 
@@ -58,10 +53,14 @@
             v-for="(x, index) in data" 
             :key="index" 
             :title="`${x.customer_name}'s order`" 
-            :footer="x.order_date.split(' ')[0]" >
-              <p>Items: {{x.total_items}}</p>
-              Total: Rp. {{x.total_price}}
-            </Card>
+        >
+          <p>Items: {{x.total_items}}</p>
+          Total: Rp. {{x.total_price}}
+
+          <template #footer>
+            {{ x.order_date.split(' ')[0] }}
+          </template>
+        </Card>
       </div>
      
     </div>

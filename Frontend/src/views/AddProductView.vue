@@ -41,7 +41,7 @@ const toast = useToast()
 // Submit handler
 const handleSubmit = async () => {
   try {
-    const response = await api.post('/products', formData.value);
+    await api.post('/products', formData.value);
     toast.success("successfully added new product")
     router.push('/')
   } catch (error) {
