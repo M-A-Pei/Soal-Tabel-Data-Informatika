@@ -20,6 +20,7 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix' => 'api'], function () use ($router) {
     $router->post('products', 'ProductController@insert');
     $router->get('products', 'ProductController@getAll');
+    $router->get('products/{id}', 'ProductController@findById');
     $router->put('products/{id}', 'ProductController@update');
     $router->delete('products/{id}', 'ProductController@delete');
     $router->get('orders', 'OrderController@getAll');

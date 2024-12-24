@@ -35,6 +35,10 @@ class ProductController extends BaseController
         return DB::select('select * from products');
     }
 
+    public function findById($id){
+        return DB::table('products')->where('id', $id)->first();
+    }
+
     public function update(Request $request, $id){
         $validator = Validator::make($request->all(), $this->insertRules);
 

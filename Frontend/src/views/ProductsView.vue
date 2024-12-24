@@ -3,14 +3,29 @@
     import CustomButton from '../components/Button.vue'
     import { onMounted, ref } from 'vue';
     import { api } from '../api'
+    import { useRouter } from 'vue-router';
 
     let data = ref([])
+    let router = useRouter()
 
     onMounted(async () => {
         const x = await api.get('/products')
         console.log(x.data)
         data.value = x.data
     })
+
+    async function deleteProduct(id){
+        if (!confirm('Are you sure you want to delete this product?')) return; // Optional confirmation dialog
+        try {
+            await api.delete(`/products/${id}`);
+            // Remove the deleted product from the list
+            data.value = data.value.filter(product => product.id !== id);
+            console.log(`Product with ID ${id} deleted successfully.`);
+        } catch (error) {
+            console.error(`Failed to delete product with ID ${id}:`, error);
+            alert('Failed to delete the product. Please try again.');
+        }
+    }
 </script>
 
 <template>
@@ -37,8 +52,8 @@
             </div>
 
             <template #footer>
-                <button style="padding: 4px; background-color: yellow; border-radius: 10px">update</button>
-                <button style="padding: 4px; background-color: pink; border-radius: 10px">delete</button>
+                <button @click="router.push({name: `editProduct`, params: {id: x.id}})" style="padding: 4px; background-color: yellow; border-radius: 10px">update</button>
+                <button @click="deleteProduct(x.id)" style="padding: 4px; background-color: pink; border-radius: 10px">delete</button>
             </template>
         </Card>
       </div>
