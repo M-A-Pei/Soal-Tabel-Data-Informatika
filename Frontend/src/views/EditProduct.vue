@@ -9,7 +9,7 @@
             </div>
             <div>
                 <label style="margin-right: 20px">Price</label>
-                <input type="number" v-model="formData.price">  
+                <input type="number" step="0.01" min="0" v-model="formData.price">  
             </div>
             <div>
                 <label style="margin-right: 20px">Stock</label>
@@ -30,32 +30,42 @@ import { useRoute, useRouter } from 'vue-router';
 const router = useRouter();
 const route = useRoute();
 const toast = useToast()
-const id = route.params.id
+const id = route.params.id;
+
+const oldProduct = ref({});
+
+// Reactive form data
+const formData = ref({
+  name: "",
+  price: 0,
+  stock: 0,
+});
 
 onMounted(async () => {
     const x = await api.get(`/products/${id}`)
     console.log(x.data)
-    data.value = x.data
+    oldProduct.value = x.data
+    console.log(oldProduct.value.name)
+    formData.value.name = oldProduct.value.name
+    formData.value.price = oldProduct.value.price
+    formData.value.stock = oldProduct.value.current_stock
+    
 })
 
-// Reactive form data
-const formData = ref({
-  name: '',
-  price: 0,
-  stock: 0,
-});
 
 
 
 // Submit handler
 const handleSubmit = async () => {
   try {
-    await api.post('/products', formData.value);
-    toast.success("successfully added new product")
+    formData.value.stock = parseInt(formData.value.stock)
+    formData.value.price = parseFloat(formData.value.price)
+    await api.put(`/products/${id}`, formData.value);
+    toast.success("successfully updated product!")
     router.push('/')
   } catch (error) {
-    toast.danger("failed to add new product")
-    console.error('Error submitting form:', error);
+    toast.error("failed to update product")
+    console.log('Error submitting form:', error);
   }
 };
 </script>

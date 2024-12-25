@@ -40,7 +40,7 @@
         </div>
       </div>
 
-      <div style="display: flex; width: 100%; flex-wrap: wrap">
+      <div style="display: flex; width: 100%; flex-wrap: wrap; justify-content: center;">
         <Card 
             v-for="x in data" 
             :key="x.id" 

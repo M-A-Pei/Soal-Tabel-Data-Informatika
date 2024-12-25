@@ -9,7 +9,7 @@
             </div>
             <div>
                 <label style="margin-right: 20px">Price</label>
-                <input type="number" v-model="formData.price">  
+                <input type="number" step="0.01" min="0" v-model="formData.price">  
             </div>
             <div>
                 <label style="margin-right: 20px">Stock</label>
@@ -45,8 +45,8 @@ const handleSubmit = async () => {
     toast.success("successfully added new product")
     router.push('/')
   } catch (error) {
-    toast.danger("failed to add new product")
-    console.error('Error submitting form:', error);
+    toast.error("failed to add new product")
+    console.log('Error submitting form:', error);
   }
 };
 </script>

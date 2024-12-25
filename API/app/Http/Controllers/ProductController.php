@@ -13,7 +13,7 @@ class ProductController extends BaseController
     private $insertRules = [
         'name' => 'required|string|min:3',
         'stock' => 'required|integer|min:1',
-        'price' => 'required|integer|min:0',
+        'price' => 'required|numeric|min:0',
     ];
 
     public function insert(Request $request){
@@ -32,12 +32,20 @@ class ProductController extends BaseController
     }
 
     public function getAll(){
-        return DB::select('select * from products');
+        return response()->json(DB::select('select * from products'));
     }
 
-    public function findById($id){
-        return DB::table('products')->where('id', $id)->first();
+    public function findById($id)
+    {
+        $product = DB::table('products')->where('id', $id)->first();
+        
+        if (!$product) {
+            return response()->json(['error' => 'Product not found'], 404);
+        }
+
+        return response()->json($product);
     }
+
 
     public function update(Request $request, $id){
         $validator = Validator::make($request->all(), $this->insertRules);
@@ -50,7 +58,7 @@ class ProductController extends BaseController
         $stock = $request->input("stock");
         $price = $request->input("price");
 
-        DB::update('update products set stock = ?, price = ?, name = ? where id = ?', [$stock, $price, $name, $id]);
+        DB::update('update products set current_stock = ?, price = ?, name = ? where id = ?', [$stock, $price, $name, $id]);
     }
 
     public function delete($id){
